@@ -10,25 +10,25 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     @Override
-    public String sum(int num1, int num2) {
-        return String.format("%d + %d = %d", num1, num2, num1 + num2);
+    public int sum(int num1, int num2) {
+        return num1 + num2;
     }
 
     @Override
-    public String subtract(int num1, int num2) {
-        return String.format("%d - %d = %d", num1, num2, num1 - num2);
+    public int subtract(int num1, int num2) {
+        return num1 - num2;
     }
 
     @Override
-    public String multiply(int num1, int num2) {
-        return String.format("%d * %d = %d", num1, num2, num1 * num2);
+    public int multiply(int num1, int num2) {
+        return num1 * num2;
     }
 
     @Override
-    public String divide(int num1, int num2) {
+    public int divide(int num1, int num2) {
         if (num2 == 0) {
-            return "на ноль делить нельзя";
+            throw new IllegalArgumentException("на ноль делить нельзя");
         }
-        return String.format("%d / %d = %d", num1, num2, num1 / num2);
+        return num1 / num2;
     }
 }
